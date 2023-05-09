@@ -10,31 +10,44 @@ import java.util.Scanner;
 
 public class Exercicio3 {
     public static void main(String[] args) {
-        System.out.println("Digite um parâmetro para a sua lista: ");
-        parametrodaLista();
-
-        System.out.println("----------------------------------------");
-        System.out.println("Digite um valor");
-        listadeNumeros(parametrodaLista());
-
-
-    }
-    public static int parametrodaLista () {
-        Scanner parametro = new Scanner(System.in);
-        int valor = parametro.nextInt();
-
-        return valor;
-    }
-    public static List <Integer> listadeNumeros(int i) {
         Scanner valores = new Scanner(System.in);
-        int num = valores.nextInt();
 
-        List<Integer> list = new ArrayList<>(i);
+        System.out.println("Digite um parâmetro para a sua lista: ");
+        int tamanhoLista = valores.nextInt();
+        List<Integer> listNumeros = retornarNumero(tamanhoLista);
 
-        list.add(num);
-        System.out.println(list);
+        adicionarValorLista(listNumeros,tamanhoLista);
+
+        System.out.println("A media dos valores é: "+ mediaAritimeticaLista(listNumeros));
+
+    }
+    public static List <Integer> retornarNumero(int tamanhoLista) {
+
+        List<Integer> list = new ArrayList<>(tamanhoLista);
+
 
         return list;
+    }
+    public static Boolean adicionarValorLista(List<Integer> list, int tamanhoLista){
+        Scanner entrar = new Scanner(System.in);
+
+        for(int i = 0; i < tamanhoLista; i++){
+
+            System.out.println("Digite o "+ (i + 1)+" valor:");
+            list.add(entrar.nextInt());
+        }
+        return true;
+    }
+    public static double mediaAritimeticaLista(List<Integer>list){
+        double media = 0;
+
+        for(int i =0; i < list.size(); i++){
+          media = media + list.get(i);
+        }
+
+        media = media/list.size();
+
+        return media;
     }
 
 }

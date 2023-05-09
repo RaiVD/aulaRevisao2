@@ -9,11 +9,11 @@ public class Exercicio1 {
     public static void main(String[] args) {
         List<String> nomes = new ArrayList<>();
 
-        nomes.add(0,"Raissa");
-        nomes.add(1,"Ana");
-        nomes.add(2,"Paula");
-        nomes.add(3,"Larissa");
-        nomes.add(4,"Maisa");
+        nomes.add("Raissa");
+        nomes.add("Ana");
+        nomes.add("Paula");
+        nomes.add("Larissa");
+        nomes.add("Maisa");
         System.out.println("Lista de nomes: "+nomes);
 
         System.out.println("------------------------------------------------");
